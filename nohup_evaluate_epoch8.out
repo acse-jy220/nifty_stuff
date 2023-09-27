@@ -1,0 +1,640 @@
+2023-09-26 14:09:31,018 - mindformers[run_mindformer.py:93] - INFO - .........Build context config..........
+2023-09-26 14:09:31,018 - mindformers[parallel_config.py:34] - INFO - initial recompute_config from dict: {'recompute': False, 'parallel_optimizer_comm_recompute': False, 'mp_comm_recompute': True, 'recompute_slice_activation': False}
+2023-09-26 14:09:31,018 - mindformers[parallel_config.py:40] - INFO - initial parallel_config from dict: {'data_parallel': 1, 'model_parallel': 1, 'expert_parallel': 1, 'pipeline_stage': 1, 'optimizer_shard': False, 'micro_batch_num': 1, 'gradient_aggregation_group': 4}
+2023-09-26 14:09:31,019 - mindformers[run_mindformer.py:95] - INFO - context config is: [ParallelConfig]
+_recompute:[ParallelConfig]
+_recompute:False
+_select_recompute:False
+_parallel_optimizer_comm_recompute:False
+_mp_comm_recompute:True
+_recompute_slice_activation:False
+
+select_recompute:False
+use_seq_parallel:False
+_optimizer_shard:False
+_gradient_aggregation_group:4
+_embed_dp_mp_config:[ParallelConfig]
+_dp_mp_config:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_vocab_emb_dp:True
+use_seq_parallel:False
+select_recompute:False
+
+_pp_config:[ParallelConfig]
+_pipeline_stage:1
+_micro_batch_num:1
+
+_moe_config:[ParallelConfig]
+_dpmp:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_expert_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+
+2023-09-26 14:09:31,019 - mindformers[run_mindformer.py:96] - INFO - moe config is: <mindformers.modules.transformer.moe.MoEConfig object at 0xfffde12431f0>
+[WARNING] ME(13876:281469232883648,MainProcess):2023-09-26-14:09:31.202.53 [mindspore/profiler/profiling.py:1514] For 'Profiler', fail to get RANK_ID from environment, use 0 instead.
+[WARNING] ME(13876:281469232883648,MainProcess):2023-09-26-14:09:31.207.36 [mindspore/profiler/profiling.py:1548] The target dir already exists. There may be some old profiling data, and they will be rewritten in the end.
+2023-09-26 14:09:31,635 - mindformers[build_context.py:108] - WARNING - In profiler mode, data sink mode will be turned off. Please reduce the data sample size with 'num_samples' in MindSpore data format according to https://www.mindspore.cn/mindinsight/docs/zh-CN/master/performance_profiling_ascend.html.
+2023-09-26 14:09:31,635 - mindformers[build_context.py:112] - WARNING - In profiler mode, auto-tune will be turned off.
+2023-09-26 14:09:31,636 - mindformers[base_trainer.py:77] - INFO - Now Running Task is: image_to_text_retrieval, Model is: blip2_stage1_vit_g
+2023-09-26 14:09:31,636 - mindformers[base_trainer.py:204] - INFO - The current parallel mode is stand_alone, batch size per card will not be changed: batch_size_per_card = 100
+2023-09-26 14:09:31,636 - mindformers[base_trainer.py:207] - INFO - global_batch_size = batch_size_per_card * device_num = 100 * 1 = 100
+2023-09-26 14:09:31,637 - mindformers[base_trainer.py:217] - INFO - parallel_config will be change to default config: [ParallelConfig]
+_recompute:[ParallelConfig]
+_recompute:False
+_select_recompute:False
+_parallel_optimizer_comm_recompute:False
+_mp_comm_recompute:True
+_recompute_slice_activation:False
+
+select_recompute:False
+use_seq_parallel:False
+_optimizer_shard:False
+_gradient_aggregation_group:4
+_embed_dp_mp_config:[ParallelConfig]
+_dp_mp_config:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_vocab_emb_dp:True
+use_seq_parallel:False
+select_recompute:False
+
+_pp_config:[ParallelConfig]
+_pipeline_stage:1
+_micro_batch_num:1
+
+_moe_config:[ParallelConfig]
+_dpmp:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_expert_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+.
+2023-09-26 14:09:31,637 - mindformers[image_to_text_retrieval.py:172] - INFO - .........Build Dataset..........
+2023-09-26 14:09:31,637 - mindformers[contrastive_language_image_pretrain_dataset.py:65] - INFO - Now Create Contrastive Language Image Pretrain Dataset.
+2023-09-26 14:09:31,694 - mindformers[image_to_text_retrieval.py:176] - INFO - Create eval dataset finish, dataset size:10
+2023-09-26 14:09:31,695 - mindformers[image_to_text_retrieval.py:179] - INFO - .........Build Net..........
+[WARNING] ME(13876:281469232883648,MainProcess):2023-09-26-14:09:31.739.277 [mindspore/ops/primitive.py:228] The in_strategy of the operator in your network will not take effect in stand_alone mode. This means the the shard function called in the network is ignored. 
+If you want to enable it, please use semi auto or auto parallel mode by context.set_auto_parallel_context(parallel_mode=ParallelMode.SEMI_AUTO_PARALLEL or context.set_auto_parallel_context(parallel_mode=ParallelMode.AUTO_PARALLEL)
+[WARNING] ME(13876:281469232883648,MainProcess):2023-09-26-14:09:31.770.164 [mindspore/common/_decorator.py:40] 'DropoutGenMask' is deprecated from version 1.5 and will be removed in a future version, use 'ops.Dropout' instead.
+[WARNING] ME(13876:281469232883648,MainProcess):2023-09-26-14:09:31.770.521 [mindspore/common/_decorator.py:40] 'DropoutDoMask' is deprecated from version 1.5 and will be removed in a future version, use 'ops.Dropout' instead.
+2023-09-26 14:10:02,621 - mindformers[run_mindformer.py:93] - INFO - .........Build context config..........
+2023-09-26 14:10:02,621 - mindformers[parallel_config.py:34] - INFO - initial recompute_config from dict: {'recompute': False, 'parallel_optimizer_comm_recompute': False, 'mp_comm_recompute': True, 'recompute_slice_activation': False}
+2023-09-26 14:10:02,621 - mindformers[parallel_config.py:40] - INFO - initial parallel_config from dict: {'data_parallel': 1, 'model_parallel': 1, 'expert_parallel': 1, 'pipeline_stage': 1, 'optimizer_shard': False, 'micro_batch_num': 1, 'gradient_aggregation_group': 4}
+2023-09-26 14:10:02,622 - mindformers[run_mindformer.py:95] - INFO - context config is: [ParallelConfig]
+_recompute:[ParallelConfig]
+_recompute:False
+_select_recompute:False
+_parallel_optimizer_comm_recompute:False
+_mp_comm_recompute:True
+_recompute_slice_activation:False
+
+select_recompute:False
+use_seq_parallel:False
+_optimizer_shard:False
+_gradient_aggregation_group:4
+_embed_dp_mp_config:[ParallelConfig]
+_dp_mp_config:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_vocab_emb_dp:True
+use_seq_parallel:False
+select_recompute:False
+
+_pp_config:[ParallelConfig]
+_pipeline_stage:1
+_micro_batch_num:1
+
+_moe_config:[ParallelConfig]
+_dpmp:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_expert_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+
+2023-09-26 14:10:02,622 - mindformers[run_mindformer.py:96] - INFO - moe config is: <mindformers.modules.transformer.moe.MoEConfig object at 0xfffb560d3220>
+[WARNING] ME(14883:281458309736384,MainProcess):2023-09-26-14:10:02.622.998 [mindspore/profiler/profiling.py:1514] For 'Profiler', fail to get RANK_ID from environment, use 0 instead.
+[WARNING] ME(14883:281458309736384,MainProcess):2023-09-26-14:10:02.623.438 [mindspore/profiler/profiling.py:1548] The target dir already exists. There may be some old profiling data, and they will be rewritten in the end.
+2023-09-26 14:10:03,215 - mindformers[build_context.py:108] - WARNING - In profiler mode, data sink mode will be turned off. Please reduce the data sample size with 'num_samples' in MindSpore data format according to https://www.mindspore.cn/mindinsight/docs/zh-CN/master/performance_profiling_ascend.html.
+2023-09-26 14:10:03,216 - mindformers[build_context.py:112] - WARNING - In profiler mode, auto-tune will be turned off.
+2023-09-26 14:10:03,216 - mindformers[base_trainer.py:77] - INFO - Now Running Task is: image_to_text_retrieval, Model is: blip2_stage1_vit_g
+2023-09-26 14:10:03,216 - mindformers[base_trainer.py:204] - INFO - The current parallel mode is stand_alone, batch size per card will not be changed: batch_size_per_card = 100
+2023-09-26 14:10:03,216 - mindformers[base_trainer.py:207] - INFO - global_batch_size = batch_size_per_card * device_num = 100 * 1 = 100
+2023-09-26 14:10:03,217 - mindformers[base_trainer.py:217] - INFO - parallel_config will be change to default config: [ParallelConfig]
+_recompute:[ParallelConfig]
+_recompute:False
+_select_recompute:False
+_parallel_optimizer_comm_recompute:False
+_mp_comm_recompute:True
+_recompute_slice_activation:False
+
+select_recompute:False
+use_seq_parallel:False
+_optimizer_shard:False
+_gradient_aggregation_group:4
+_embed_dp_mp_config:[ParallelConfig]
+_dp_mp_config:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_vocab_emb_dp:True
+use_seq_parallel:False
+select_recompute:False
+
+_pp_config:[ParallelConfig]
+_pipeline_stage:1
+_micro_batch_num:1
+
+_moe_config:[ParallelConfig]
+_dpmp:[ParallelConfig]
+_data_parallel:1
+_model_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+_expert_parallel:1
+use_seq_parallel:False
+select_recompute:False
+
+.
+2023-09-26 14:10:03,217 - mindformers[image_to_text_retrieval.py:172] - INFO - .........Build Dataset..........
+2023-09-26 14:10:03,217 - mindformers[contrastive_language_image_pretrain_dataset.py:65] - INFO - Now Create Contrastive Language Image Pretrain Dataset.
+2023-09-26 14:10:03,276 - mindformers[image_to_text_retrieval.py:176] - INFO - Create eval dataset finish, dataset size:10
+2023-09-26 14:10:03,276 - mindformers[image_to_text_retrieval.py:179] - INFO - .........Build Net..........
+[WARNING] ME(14883:281458309736384,MainProcess):2023-09-26-14:10:03.313.436 [mindspore/ops/primitive.py:228] The in_strategy of the operator in your network will not take effect in stand_alone mode. This means the the shard function called in the network is ignored. 
+If you want to enable it, please use semi auto or auto parallel mode by context.set_auto_parallel_context(parallel_mode=ParallelMode.SEMI_AUTO_PARALLEL or context.set_auto_parallel_context(parallel_mode=ParallelMode.AUTO_PARALLEL)
+[WARNING] ME(14883:281458309736384,MainProcess):2023-09-26-14:10:03.348.267 [mindspore/common/_decorator.py:40] 'DropoutGenMask' is deprecated from version 1.5 and will be removed in a future version, use 'ops.Dropout' instead.
+[WARNING] ME(14883:281458309736384,MainProcess):2023-09-26-14:10:03.348.666 [mindspore/common/_decorator.py:40] 'DropoutDoMask' is deprecated from version 1.5 and will be removed in a future version, use 'ops.Dropout' instead.
+2023-09-26 14:10:24,949 - mindformers[blip2_qformer.py:87] - INFO - freeze vision encoder
+------- BertPredictionHeadTransform -------
+self.dense:  Linear<>
+self.dense.weight:  Parameter (name=dense.weight, shape=(768, 768), dtype=Float32, requires_grad=True)
+================== dp - mp ================== 
+dp:  1
+mp:  1
+self.decoder.bias: Parameter (name=bias, shape=(30522,), dtype=Float32, requires_grad=True)
+self.decoder.weight: Parameter (name=decoder.weight, shape=(30522, 768), dtype=Float32, requires_grad=True)
+self.decoder.bias.__hash__ 281451316528608
+self.decoder.weight: 281451316657264
+self.bias: Parameter (name=bias, shape=(30522,), dtype=Float32, requires_grad=True)
+self.bias.__hash__ 281451316528608
+================== dp - mp ================== 
+dp:  1
+mp:  1
+self.qformer.cls.predictions.decoder.weight.param_info.parameter_shape: [30522, 768]
+self.qformer.cls.predictions.decoder.bias.param_info.parameter_shape: [30522]
+======= enter tie_or_clone_weights ======= 
+
+output_embeddings.weight:  Parameter (name=qformer.cls.predictions.decoder.weight, shape=(30523, 768), dtype=Float32, requires_grad=True)
+output_embeddings.bias:  Parameter (name=qformer.cls.predictions.bias, shape=(30523,), dtype=Float32, requires_grad=True)
+output_embeddings:  Linear<>
+========================================== 
+
+input_embeddings.vocab_size:  30523
+2023-09-26 14:10:33,614 - mindformers[qformer.py:1531] - INFO - weights tied.
+2023-09-26 14:10:33,615 - mindformers[qformer.py:1524] - INFO - resize_token_embeddings from 30522 to 30523.
+self.qformer.cls.predictions.decoder.bias: Parameter (name=qformer.cls.predictions.bias, shape=(30523,), dtype=Float32, requires_grad=True)
+self.qformer.cls.predictions.decoder.bias.__hash__ 281451316528608
+self.qformer.cls.predictions.decoder.weight: Parameter (name=qformer.cls.predictions.decoder.weight, shape=(30523, 768), dtype=Float32, requires_grad=True)
+self.qformer.cls.predictions.decoder.weight.param_info.parameter_shape: [30523, 768]
+self.qformer.cls.predictions.decoder.weight.__hash__ 281451316657264
+self.qformer.cls.predictions.bias: Parameter (name=qformer.cls.predictions.bias, shape=(30523,), dtype=Float32, requires_grad=True)
+self.qformer.cls.predictions.decoder.bias.param_info.parameter_shape: [30523]
+self.qformer.cls.predictions.bias.__hash__ 281451316528608
+2023-09-26 14:10:33,779 - mindformers[image_to_text_retrieval.py:189] - INFO - .........Loading Checkpoint..........
+2023-09-26 14:10:47,743 - mindformers[base_model.py:79] - INFO - weights in /home/yj/930/mindformers/output/checkpoint/rank_0/blip2_qformer_rank_0-8_7084.ckpt are loaded
+2023-09-26 14:10:47,755 - mindformers[image_to_text_retrieval.py:192] - INFO - Network Parameters: 210.0 M.
+2023-09-26 14:10:47,755 - mindformers[image_to_text_retrieval.py:195] - INFO - .........Build Callbacks for Evaluate..........
+2023-09-26 14:10:47,756 - mindformers[image_to_text_retrieval.py:202] - INFO - .........Starting Evaling Model..........
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.620 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag 'str' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.696 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag '=' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.711 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag '"--disable_expand_ops=Softmax,Dropout' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.722 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag '"' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.732 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag '\' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.741 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:90] ParseFlags] For 'context.set_context', the flag '"--enable_parallel_fusion=true' in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] ME(14883,fffc1e9227c0,python):2023-09-26-14:11:00.779.761 [mindspore/ccsrc/backend/common/graph_kernel/graph_kernel_flags.cc:121] AddFlag] For 'context.set_context', the flag --enable_auto_tensor_inplace=true" in the parameter 'graph_kernel_flags' is invalid. Valid flag format is "--key=value", flags are separated by spaces(e.g. "--key1=value1 --key2=value2"). bool flag's value can be implicit, the "--key" means "--key=true".
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:11:22.446.485 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:248] GetTraceIterEnd] Profiling graph:33 PROFILING_ITER_END not found. Found last TBE or Akg or Hccl op as PROFILING_ITER_END instead.
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:11:22.598.404 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:598] RecordLaunchTaskBegin] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:11:22.598.487 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:633] ReportTask] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:13:14.395.216 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:598] RecordLaunchTaskBegin] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:13:14.395.328 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:633] ReportTask] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:13:21.766.702 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:598] RecordLaunchTaskBegin] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:13:21.766.802 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:633] ReportTask] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:14:09.731.918 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:248] GetTraceIterEnd] Profiling graph:140 PROFILING_ITER_END not found. Found last TBE or Akg or Hccl op as PROFILING_ITER_END instead.
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:14:09.799.050 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:598] RecordLaunchTaskBegin] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:14:09.799.182 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:633] ReportTask] Do not find op info: 
+{'auto_trans_ckpt': False,
+ 'auto_tune': False,
+ 'autotune_per_step': 10,
+ 'callbacks': [OrderedDict([('type', 'MFLossMonitor')]),
+               OrderedDict([('type', 'CheckpointMointor'),
+                            ('prefix', 'blip2_qformer'),
+                            ('save_checkpoint_steps', 10000),
+                            ('integrated_save', True),
+                            ('async_save', False)]),
+               OrderedDict([('type', 'ObsMonitor')])],
+ 'context': {'device_id': 0,
+             'device_target': 'Ascend',
+             'enable_graph_kernel': False,
+             'graph_kernel_flags': 'str = '
+                                   '"--disable_expand_ops=Softmax,Dropout " \\ '
+                                   '"--enable_parallel_fusion=true '
+                                   '--reduce_fuse_depth=8 '
+                                   '--enable_auto_tensor_inplace=true"',
+             'max_call_depth': 10000,
+             'save_graphs': False,
+             'save_graphs_path': './graph'},
+ 'device_num': 1,
+ 'eval_callbacks': [OrderedDict([('type', 'ObsMonitor')])],
+ 'eval_dataset': {'add_extra_itm_score': True,
+                  'auto_tune': False,
+                  'autotune_per_step': 10,
+                  'batch_size': 100,
+                  'data_loader': {'annotation_files': ['/data/flickr30k/annotations/test.json'],
+                                  'column_names': ['image', 'text'],
+                                  'dataset_dir': '/data',
+                                  'image_dirs': ['/data/flickr30k/images'],
+                                  'shuffle': False,
+                                  'stage': 'eval',
+                                  'type': 'MultiImgCapDataLoader'},
+                  'do_eval': True,
+                  'drop_remainder': True,
+                  'filepath_prefix': './autotune',
+                  'k_test': 128,
+                  'num_parallel_workers': 1,
+                  'numa_enable': False,
+                  'prefetch_size': 30,
+                  'profile': True,
+                  'python_multiprocessing': False,
+                  'repeat': 1,
+                  'return_attention_mask': True,
+                  'seed': 42,
+                  'text_transforms': {'max_length': 35,
+                                      'max_words': 50,
+                                      'padding': 'max_length',
+                                      'prompt': '',
+                                      'random_seed': 2022,
+                                      'truncation': True,
+                                      'type': 'CaptionTransform'},
+                  'tokenizer': {'add_special_tokens': True,
+                                'bos_token': '[DEC]',
+                                'max_length': 35,
+                                'pad_token': '[PAD]',
+                                'padding': 'max_length',
+                                'truncation': True,
+                                'type': 'BertTokenizer',
+                                'vocab_file': './checkpoint_download/bert/vocab.txt'},
+                  'transforms': [OrderedDict([('type', 'ToPIL')]),
+                                 OrderedDict([('type', 'Resize'),
+                                              ('size', [224, 224]),
+                                              ('interpolation', 'bicubic')]),
+                                 OrderedDict([('type', 'ToTensor')]),
+                                 OrderedDict([('type', 'Normalize'),
+                                              ('mean',
+                                               [0.48145466,
+                                                0.4578275,
+                                                0.40821073]),
+                                              ('std',
+                                               [0.26862954,
+                                                0.26130258,
+                                                0.27577711]),
+                                              ('is_hwc', False)])]},
+ 'eval_dataset_task': {'dataset_config': {'add_extra_itm_score': True,
+                                          'auto_tune': False,
+                                          'autotune_per_step': 10,
+                                          'batch_size': 100,
+                                          'data_loader': {'annotation_files': ['/data/flickr30k/annotations/test.json'],
+                                                          'column_names': ['image',
+                                                                           'text'],
+                                                          'dataset_dir': '/data',
+                                                          'image_dirs': ['/data/flickr30k/images'],
+                                                          'shuffle': False,
+                                                          'stage': 'eval',
+                                                          'type': 'MultiImgCapDataLoader'},
+                                          'do_eval': True,
+                                          'drop_remainder': True,
+                                          'filepath_prefix': './autotune',
+                                          'k_test': 128,
+                                          'num_parallel_workers': 1,
+                                          'numa_enable': False,
+                                          'prefetch_size': 30,
+                                          'profile': True,
+                                          'python_multiprocessing': False,
+                                          'repeat': 1,
+                                          'return_attention_mask': True,
+                                          'seed': 42,
+                                          'text_transforms': {'max_length': 35,
+                                                              'max_words': 50,
+                                                              'padding': 'max_length',
+                                                              'prompt': '',
+                                                              'random_seed': 2022,
+                                                              'truncation': True,
+                                                              'type': 'CaptionTransform'},
+                                          'tokenizer': {'add_special_tokens': True,
+                                                        'bos_token': '[DEC]',
+                                                        'max_length': 35,
+                                                        'pad_token': '[PAD]',
+                                                        'padding': 'max_length',
+                                                        'truncation': True,
+                                                        'type': 'BertTokenizer',
+                                                        'vocab_file': './checkpoint_download/bert/vocab.txt'},
+                                          'transforms': [OrderedDict([('type',
+                                                                       'ToPIL')]),
+                                                         OrderedDict([('type',
+                                                                       'Resize'),
+                                                                      ('size',
+                                                                       [224,
+                                                                        224]),
+                                                                      ('interpolation',
+                                                                       'bicubic')]),
+                                                         OrderedDict([('type',
+                                                                       'ToTensor')]),
+                                                         OrderedDict([('type',
+                                                                       'Normalize'),
+                                                                      ('mean',
+                                                                       [0.48145466,
+                                                                        0.4578275,
+                                                                        0.40821073]),
+                                                                      ('std',
+                                                                       [0.26862954,
+                                                                        0.26130258,
+                                                                        0.27577711]),
+                                                                      ('is_hwc',
+                                                                       False)])]},
+                       'type': 'ContrastiveLanguageImagePretrainDataset'},
+ 'filepath_prefix': './autotune',
+ 'init_start_profile': False,
+ 'layer_scale': False,
+ 'load_checkpoint': None,
+ 'local_rank': 0,
+ 'lr_scale': False,
+ 'lr_schedule': {'learning_rate': 0.0001,
+                 'lr_end': 1e-05,
+                 'total_steps': -1,
+                 'type': 'cosine',
+                 'warmup_lr_init': 1e-06,
+                 'warmup_steps': 5000},
+ 'micro_batch_interleave_num': 1,
+ 'model': {'arch': {'type': 'Blip2Qformer'},
+           'model_config': {'checkpoint_name_or_path': '/home/yj/930/mindformers/output/checkpoint/rank_0/blip2_qformer_rank_0-8_7084.ckpt',
+                            'compute_dtype': 'float16',
+                            'dtype': 'float32',
+                            'freeze_vision': True,
+                            'layernorm_dtype': 'float32',
+                            'max_txt_len': 32,
+                            'qformer_config': {'add_cross_attention': True,
+                                               'attention_probs_dropout_prob': 0.1,
+                                               'bos_token_id': 30522,
+                                               'chunk_size_feed_forward': 0,
+                                               'compute_dtype': 'float16',
+                                               'cross_attention_freq': 2,
+                                               'dtype': 'float32',
+                                               'encoder_width': 1408,
+                                               'hidden_act': 'gelu',
+                                               'hidden_dropout_prob': 0.1,
+                                               'hidden_size': 768,
+                                               'initializer_range': 0.02,
+                                               'intermediate_size': 3072,
+                                               'layer_norm_eps': 1e-12,
+                                               'layernorm_dtype': 'float32',
+                                               'max_position_embeddings': 512,
+                                               'num_attention_heads': 12,
+                                               'num_hidden_layers': 12,
+                                               'output_attentions': False,
+                                               'output_hidden_states': False,
+                                               'pad_token_id': 0,
+                                               'query_length': 32,
+                                               'sep_token_id': 102,
+                                               'softmax_dtype': 'float32',
+                                               'tie_word_embeddings': True,
+                                               'use_relative_positions': False,
+                                               'use_return_dict': False,
+                                               'vocab_size': 30522},
+                            'softmax_dtype': 'float32',
+                            'type': 'Blip2Config',
+                            'vision_config': {'attention_probs_dropout_prob': 0.0,
+                                              'checkpoint_name_or_path': 'vit_g_p16',
+                                              'drop_path_rate': 0.0,
+                                              'encoder_stride': 16,
+                                              'hidden_act': 'gelu',
+                                              'hidden_dropout_prob': 0.0,
+                                              'hidden_size': 1408,
+                                              'image_size': 224,
+                                              'initializer_range': 0.001,
+                                              'intermediate_size': 6144,
+                                              'layer_norm_eps': 1e-06,
+                                              'num_attention_heads': 16,
+                                              'num_channels': 3,
+                                              'num_hidden_layers': 39,
+                                              'patch_size': 14,
+                                              'post_layernorm_residual': False,
+                                              'qkv_bias': True,
+                                              'type': 'ViTConfig',
+                                              'use_mean_pooling': False}}},
+ 'moe_config': <mindformers.modules.transformer.moe.MoEConfig object at 0xfffb560d3220>,
+ 'only_save_strategy': False,
+ 'optimizer': {'beta1': 0.9,
+               'beta2': 0.98,
+               'eps': 1e-08,
+               'type': 'adamw',
+               'weight_decay': 0.05},
+ 'output_dir': './output',
+ 'parallel': {'enable_alltoall': False,
+              'enable_parallel_optimizer': False,
+              'full_batch': False,
+              'gradients_mean': True,
+              'parallel_mode': 0,
+              'search_mode': 'sharding_propagation',
+              'strategy_ckpt_save_file': './output/strategy/./ckpt_strategy_rank_0.ckpt'},
+ 'parallel_config': <mindformers.modules.transformer.transformer.TransformerOpParallelConfig object at 0xfffb51e0adf0>,
+ 'processor': {'image_processor': {'image_size': 224,
+                                   'is_hwc': False,
+                                   'mean': [0.48145466, 0.4578275, 0.40821073],
+                                   'std': [0.26862954, 0.26130258, 0.27577711],
+                                   'type': 'Blip2ImageProcessor'},
+               'tokenizer': {'add_special_tokens': True,
+                             'bos_token': '[DEC]',
+                             'max_length': 32,
+                             'pad_token': '[PAD]',
+                             'padding': 'max_length',
+                             'truncation': True,
+                             'type': 'BertTokenizer'},
+               'type': 'Blip2Processor'},
+ 'profile': True,
+ 'profile_cb': <mindformers.core.callback.callback.ProfileMonitor object at 0xfffb562cf280>,
+ 'profile_communication': False,
+ 'profile_memory': True,
+ 'profile_start_step': 1,
+ 'profile_stop_step': 10,
+ 'recompute_config': <mindformers.modules.transformer.transformer.TransformerRecomputeConfig object at 0xfffb7def5370>,
+ 'remote_save_url': 'Please input obs url on AICC platform.',
+ 'resume_training': False,
+ 'run_mode': 'eval',
+ 'runner_config': {'batch_size': 100,
+                   'epochs': 10,
+                   'has_trained_epoches': 0,
+                   'has_trained_steps': 0,
+                   'image_size': 224,
+                   'initial_epoch': 0,
+                   'sink_mode': False,
+                   'sink_size': 2},
+ 'runner_wrapper': {'sens': 1024, 'type': 'TrainOneStepCell'},
+ 'seed': 42,
+ 'src_strategy_path_or_dir': '',
+ 'trainer': {'model_name': 'blip2_stage1_vit_g',
+             'type': 'image_to_text_retrieval'},
+ 'use_parallel': False}
+2023-09-26 14:15:16,287 - mindformers[eval_utils.py:74] - INFO - ========= k_text num: 128 =========
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:21:27.991.082 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:248] GetTraceIterEnd] Profiling graph:159 PROFILING_ITER_END not found. Found last TBE or Akg or Hccl op as PROFILING_ITER_END instead.
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:21:28.109.887 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:598] RecordLaunchTaskBegin] Do not find op info: 
+[WARNING] DEVICE(14883,fffc1e9227c0,python):2023-09-26-14:21:28.110.026 [mindspore/ccsrc/plugin/device/ascend/hal/device/profiling/profiling_utils.cc:633] ReportTask] Do not find op info: 
+I2T: 0/1000 - sims.shape: (5000,)
+I2T: 50/1000 - sims.shape: (5000,)
+I2T: 100/1000 - sims.shape: (5000,)
+I2T: 150/1000 - sims.shape: (5000,)
+I2T: 200/1000 - sims.shape: (5000,)
+I2T: 250/1000 - sims.shape: (5000,)
+I2T: 300/1000 - sims.shape: (5000,)
+I2T: 350/1000 - sims.shape: (5000,)
+I2T: 400/1000 - sims.shape: (5000,)
+I2T: 450/1000 - sims.shape: (5000,)
+I2T: 500/1000 - sims.shape: (5000,)
+I2T: 550/1000 - sims.shape: (5000,)
+I2T: 600/1000 - sims.shape: (5000,)
+I2T: 650/1000 - sims.shape: (5000,)
+I2T: 700/1000 - sims.shape: (5000,)
+I2T: 750/1000 - sims.shape: (5000,)
+I2T: 800/1000 - sims.shape: (5000,)
+I2T: 850/1000 - sims.shape: (5000,)
+I2T: 900/1000 - sims.shape: (5000,)
+I2T: 950/1000 - sims.shape: (5000,)
+T2I: 0/5000 - sims.shape: (1000,)
+T2I: 50/5000 - sims.shape: (1000,)
+T2I: 100/5000 - sims.shape: (1000,)
+T2I: 150/5000 - sims.shape: (1000,)
+T2I: 200/5000 - sims.shape: (1000,)
+T2I: 250/5000 - sims.shape: (1000,)
+T2I: 300/5000 - sims.shape: (1000,)
+T2I: 350/5000 - sims.shape: (1000,)
+T2I: 400/5000 - sims.shape: (1000,)
+T2I: 450/5000 - sims.shape: (1000,)
+T2I: 500/5000 - sims.shape: (1000,)
+T2I: 550/5000 - sims.shape: (1000,)
+T2I: 600/5000 - sims.shape: (1000,)
+T2I: 650/5000 - sims.shape: (1000,)
+T2I: 700/5000 - sims.shape: (1000,)
+T2I: 750/5000 - sims.shape: (1000,)
+T2I: 800/5000 - sims.shape: (1000,)
+T2I: 850/5000 - sims.shape: (1000,)
+T2I: 900/5000 - sims.shape: (1000,)
+T2I: 950/5000 - sims.shape: (1000,)
+T2I: 1000/5000 - sims.shape: (1000,)
+T2I: 1050/5000 - sims.shape: (1000,)
+T2I: 1100/5000 - sims.shape: (1000,)
+T2I: 1150/5000 - sims.shape: (1000,)
+T2I: 1200/5000 - sims.shape: (1000,)
+T2I: 1250/5000 - sims.shape: (1000,)
+T2I: 1300/5000 - sims.shape: (1000,)
+T2I: 1350/5000 - sims.shape: (1000,)
+T2I: 1400/5000 - sims.shape: (1000,)
+T2I: 1450/5000 - sims.shape: (1000,)
+T2I: 1500/5000 - sims.shape: (1000,)
+T2I: 1550/5000 - sims.shape: (1000,)
+T2I: 1600/5000 - sims.shape: (1000,)
+T2I: 1650/5000 - sims.shape: (1000,)
+T2I: 1700/5000 - sims.shape: (1000,)
+T2I: 1750/5000 - sims.shape: (1000,)
+T2I: 1800/5000 - sims.shape: (1000,)
+T2I: 1850/5000 - sims.shape: (1000,)
+T2I: 1900/5000 - sims.shape: (1000,)
+T2I: 1950/5000 - sims.shape: (1000,)
+T2I: 2000/5000 - sims.shape: (1000,)
+T2I: 2050/5000 - sims.shape: (1000,)
+T2I: 2100/5000 - sims.shape: (1000,)
+T2I: 2150/5000 - sims.shape: (1000,)
+T2I: 2200/5000 - sims.shape: (1000,)
+T2I: 2250/5000 - sims.shape: (1000,)
+T2I: 2300/5000 - sims.shape: (1000,)
+T2I: 2350/5000 - sims.shape: (1000,)
+T2I: 2400/5000 - sims.shape: (1000,)
+T2I: 2450/5000 - sims.shape: (1000,)
+T2I: 2500/5000 - sims.shape: (1000,)
+T2I: 2550/5000 - sims.shape: (1000,)
+T2I: 2600/5000 - sims.shape: (1000,)
+T2I: 2650/5000 - sims.shape: (1000,)
+T2I: 2700/5000 - sims.shape: (1000,)
+T2I: 2750/5000 - sims.shape: (1000,)
+T2I: 2800/5000 - sims.shape: (1000,)
+T2I: 2850/5000 - sims.shape: (1000,)
+T2I: 2900/5000 - sims.shape: (1000,)
+T2I: 2950/5000 - sims.shape: (1000,)
+T2I: 3000/5000 - sims.shape: (1000,)
+T2I: 3050/5000 - sims.shape: (1000,)
+T2I: 3100/5000 - sims.shape: (1000,)
+T2I: 3150/5000 - sims.shape: (1000,)
+T2I: 3200/5000 - sims.shape: (1000,)
+T2I: 3250/5000 - sims.shape: (1000,)
+T2I: 3300/5000 - sims.shape: (1000,)
+T2I: 3350/5000 - sims.shape: (1000,)
+T2I: 3400/5000 - sims.shape: (1000,)
+T2I: 3450/5000 - sims.shape: (1000,)
+T2I: 3500/5000 - sims.shape: (1000,)
+T2I: 3550/5000 - sims.shape: (1000,)
+T2I: 3600/5000 - sims.shape: (1000,)
+T2I: 3650/5000 - sims.shape: (1000,)
+T2I: 3700/5000 - sims.shape: (1000,)
+T2I: 3750/5000 - sims.shape: (1000,)
+T2I: 3800/5000 - sims.shape: (1000,)
+T2I: 3850/5000 - sims.shape: (1000,)
+T2I: 3900/5000 - sims.shape: (1000,)
+T2I: 3950/5000 - sims.shape: (1000,)
+T2I: 4000/5000 - sims.shape: (1000,)
+T2I: 4050/5000 - sims.shape: (1000,)
+T2I: 4100/5000 - sims.shape: (1000,)
+T2I: 4150/5000 - sims.shape: (1000,)
+T2I: 4200/5000 - sims.shape: (1000,)
+T2I: 4250/5000 - sims.shape: (1000,)
+T2I: 4300/5000 - sims.shape: (1000,)
+T2I: 4350/5000 - sims.shape: (1000,)
+T2I: 4400/5000 - sims.shape: (1000,)
+T2I: 4450/5000 - sims.shape: (1000,)
+T2I: 4500/5000 - sims.shape: (1000,)
+T2I: 4550/5000 - sims.shape: (1000,)
+T2I: 4600/5000 - sims.shape: (1000,)
+T2I: 4650/5000 - sims.shape: (1000,)
+T2I: 4700/5000 - sims.shape: (1000,)
+T2I: 4750/5000 - sims.shape: (1000,)
+T2I: 4800/5000 - sims.shape: (1000,)
+T2I: 4850/5000 - sims.shape: (1000,)
+T2I: 4900/5000 - sims.shape: (1000,)
+T2I: 4950/5000 - sims.shape: (1000,)
+2023-09-26 14:50:07,319 - mindformers[eval_utils.py:39] - WARNING - expect the eval dataset to be generate         from MultiImgCapDataLoader, but is <class 'mindformers.tools.register.config.MindFormerConfig'>, will generate         image-text mapping with accumulate indexes by default.
+2023-09-26 14:50:07,680 - mindformers[image_to_text_retrieval.py:237] - INFO - {'txt_r1': 89.8, 'txt_r5': 99.3, 'txt_r10': 99.8, 'txt_r_mean': 96.3, 'img_r1': 77.08, 'img_r5': 94.2, 'img_r10': 97.0, 'img_r_mean': 89.42666666666666, 'r_mean': 92.86333333333333, 'agg_metrics': 96.3}
+2023-09-26 14:50:07,681 - mindformers[image_to_text_retrieval.py:238] - INFO - .........Evaluate Over!.............
