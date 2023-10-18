@@ -1,0 +1,25 @@
+data_loader = dict(
+    type = 'MultiImgCapDataLoader',
+    dataset_dir = "/data",
+    annotation_files = [
+      "vg/annotations/vg_caption.json",
+      "coco2014/coco/annotations/coco_karpathy_train.json"
+    ],
+    image_dirs = [
+     "vg/images",
+      "coco2014/coco/images"
+    ],
+    stage = "train",
+    column_names = ["image", "text"],
+    shuffle = True,
+)
+
+dataset_config = dict(data_loader=data_loader)
+train_dataset_task = dict(dataset_config=dataset_config)
+args = dict(train_dataset_task=train_dataset_task,
+           train_dataset=dataset_config)
+
+# BLIP-2一阶段初始化预训练任务
+trainer = Trainer(task='contrastive_language_image_pretrain',
+    model='blip2_stage1_vit_g',
+    args=args)
